@@ -14,7 +14,7 @@ architecture behavioral of contador is
   signal count : std_logic_vector(15 downto 0);
 
 begin
-
+ 
 led <= count;
 
   contar : process(clk,btnR)  
