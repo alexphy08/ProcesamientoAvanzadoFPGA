@@ -19,7 +19,7 @@ signal output : std_logic_vector(3 downto 0);
 signal mode : std_logic;
 
 begin
-
+ 
 A <= sw(3 downto 0);
 B <= sw(7 downto 4);
 selector <= sw(11 downto 8);
