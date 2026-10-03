@@ -71,5 +71,5 @@ process(clk,btnR)
 
        end case;
     end if;
-end process;
-end architecture;
+end process; 
+end architecture; 
