@@ -8,7 +8,7 @@ entity contador_d____ is
        sw : in std_logic_vector(3 downto 0);
        seg : out std_logic_vector(6 downto 0)
  );
-end entity;
+end entity; 
 
 architecture behavioral of contador_d____ is
 
