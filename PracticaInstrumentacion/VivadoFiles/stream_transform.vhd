@@ -14,14 +14,14 @@ entity stream_transform is
         aresetn    : in  std_logic;
 
         -- AXI4-Stream slave input
-        s_axis_tdata  : in  <???>(31 downto 0);
+        s_axis_tdata  : in  std_logic_vector (31 downto 0);
         s_axis_tkeep  : in  std_logic_vector(3 downto 0);
         s_axis_tvalid : in  std_logic;
         s_axis_tready : out std_logic;
         s_axis_tlast  : in  std_logic;
 
         -- AXI4-Stream master output
-        m_axis_tdata  : out std_logic_vector(31 <???> 0);
+        m_axis_tdata  : out std_logic_vector(31 downto 0);
         m_axis_tkeep  : out std_logic_vector(3 downto 0);
         m_axis_tvalid : out std_logic;
         m_axis_tready : in  std_logic;
@@ -68,10 +68,10 @@ begin
 
                     if x(0) = '1' then
                         -- Odd: add 5
-                        y := x + to_unsigned(<???>, 32);
+                        y := x + to_unsigned(5, 32);
                     else
                         -- Even: subtract 2
-                        y := x - <???>(2, 32);
+                        y := x - to_unsigned(2, 32);
                     end if;
 
                     data_reg  <= std_logic_vector(y);

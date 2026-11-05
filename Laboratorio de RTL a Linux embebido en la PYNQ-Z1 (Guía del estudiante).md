@@ -87,6 +87,8 @@ No se entregan `top_leds.vhd` ni los archivos del IP `RegisterControl_leds`: los
 
 &#91;Captura: ventana de creación del proyecto con la parte xc7z020clg400-1\]
 
+![alt text](image.png)
+
 ### 2.2 Etapa 1: RTL puro con LEDs y pulsadores
 
 Objetivo: entender la FSM sin procesador. Los switches eligen el modo y los pulsadores fijan el valor.
@@ -147,9 +149,171 @@ Añade `pynq_c.xdc` como restricciones, define `top_leds` como módulo superior 
 
 &#91;Foto: LEDs de la placa con cada combinación de switches\]
 
-&#91;Código: `tick_generator.vhd` y `fsm_controller.vhd` con los huecos corregidos\]
+![alt text](image-2.png)
+
+&#91;Código: `tick_generator.vhd` con los huecos corregidos\]
+
+```vhdl
+----------------------------------------------------------------------------------
+-- RTL Create by Fabian Castano
+----------------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+entity tick_generator is
+    generic (
+        CLK_FREQ_HZ : positive := 125_000_000;
+        HALF_PERIOD_MS : positive := 125
+            );
+    Port (
+        clk    : in  std_logic;
+        rst    : in  std_logic;
+        tick   : out std_logic
+         );
+end tick_generator;
+
+architecture Behavioral of tick_generator is
+    constant COUNT_MAX : positive := 
+        (CLK_FREQ_HZ / 1000) * HALF_PERIOD_MS;
+    signal count    : natural range 0 to COUNT_MAX -1 := 0;
+    signal tick_reg : std_logic := '0';
+begin
+
+    process(clk)
+    begin
+        if rising_edge(clk) then
+            if rst = '0' then
+                count    <= 0;
+                tick_reg <= '0';
+
+            elsif count = COUNT_MAX - 1 then
+                count    <= 0;
+                tick_reg <= not tick_reg;
+
+            else
+                count <= count + 1;
+            end if;
+        end if;
+    end process;
+    
+    tick <= tick_reg;
+    
+end Behavioral;
+```
+
+&#91;Código: `fsm_controller.vhd` con los huecos corregidos\]
+
+```vhdl
+------------------------------------------------------------------------
+-- IP RTL create by Fabian Castano
+------------------------------------------------------------------------
+
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.NUMERIC_STD.ALL;
+
+-- Entity creation
+entity fsm_controller is
+    Port (
+        clk  : in  std_logic;
+        rst  : in  std_logic;
+        
+        mode : in  std_logic_vector(2 downto 0);
+        tick : in  std_logic;
+        val  : in  std_logic_vector(3 downto 0);
+        
+        leds : out std_logic_vector(3 downto 0);
+
+        -- AXI4-Stream slave input
+        s_axis_tdata  : in  std_logic_vector(31 downto 0);
+        s_axis_tkeep  : in  std_logic_vector(3 downto 0);
+        s_axis_tvalid : in  std_logic;
+        s_axis_tready : out std_logic;
+        s_axis_tlast  : in  std_logic
+    );
+end fsm_controller;
+
+architecture Behavioral of fsm_controller is
+
+    type state_type is (IDLE, RIGHT, LEFT, VALUE, DMA);
+
+    signal state    : state_type := IDLE;
+    signal tick_prev : std_logic := '0';
+
+    signal led_reg : std_logic_vector(3 downto 0) := "0000";
+
+begin
+
+    s_axis_tready <= '1' when mode = "100" and tick = '1' and tick_prev = '0' else '0';
+    leds <= led_reg;
+
+    process(clk)
+    begin
+        if rising_edge (clk) then
+
+            if rst = '0' then
+                state     <= IDLE;
+                tick_prev <= '0';
+                led_reg   <= "0000";
+                
+            else
+                -- Default: update the selected operating mode
+                case mode is
+                    when "000"   => state <= IDLE;
+                    when "001"   => state <= RIGHT; 
+                    when "010"   => state <= LEFT;
+                    when "011"   => state <= VALUE;
+                    when "100"   => state <= DMA;
+                    when others  => state <= IDLE;
+                end case;
+
+                -- Remember the previous tick level
+                tick_prev <= tick;
+
+                -- Detect only the rising edge of tick
+                if tick = '1' and tick_prev = '0' then
+
+                    case state is
+                        when IDLE =>
+                            led_reg <= "0001";
+
+                        when RIGHT =>
+                            if led_reg = "1000" then
+                                led_reg <= "0001";
+                            else
+                                led_reg <= led_reg(2 downto 0) & '0';
+                            end if;
+
+                        when LEFT =>
+                            if led_reg = "0001" then
+                                led_reg <= "1000";
+                            else
+                                led_reg <= '0' & led_reg(3 downto 1);
+                            end if;
+                            
+                        when VALUE =>
+                            led_reg <= val;
+                        
+                        when DMA =>
+                            if s_axis_tvalid = '1' and tick = '1' and tick_prev = '0' then
+                                led_reg <= s_axis_tdata(3 downto 0);
+                            end if;
+                    end case;
+
+                end if;
+            end if;
+        end if;
+    end process;
+
+end Behavioral;
+
+```
 
 &#91;Resultado: consola Tcl con `check_syntax` sin errores\]
+
+![alt text](image-1.png)
 
 **Preguntas**
 
@@ -193,9 +357,15 @@ val  <= val_reg;
 
 &#91;Captura: pestaña Review and Package del IP Packager\]
 
+![alt text](image-3.png)
+
 &#91;Captura: repositorio de IP añadido en Settings → IP → Repository\]
 
+![alt text](image-4.png)
+
 &#91;Captura: IP `RegisterControl_leds` visible en el IP Catalog\]
+
+![alt text](image-5.png)
 
 **Idea clave:** un IP AXI-Lite es una FSM de bus más un banco de registros. Tu lógica solo ve las señales `mode` y `val`.
 
@@ -211,6 +381,7 @@ Construyes el diseño de bloques a mano. Las tablas de más abajo dicen exactame
 4. Añade el resto de bloques y configúralos según la **tabla de parámetros**. `tick_generator`, `fsm_controller` y `stream_transform` se añaden con **Add Module**.
 5. Haz las conexiones de la **tabla de conexiones**. Para los enlaces AXI puedes usar **Run Connection Automation**, pero revisa después que coincidan con la tabla.
 6. Marca como puertos externos `led` (4 bits) y `tick`, y renómbralos así para que coincidan con `pynq_c.xdc`. Ese archivo incluye líneas de otros puertos (`sysclk`, `sw`, `btn`) que no existen en este diseño: coméntalas.
+Nota: No hicimos externo el tick, porque fueron conexiones internas.
 7. Abre el **Address Editor** y compáralo con la **tabla de direcciones**. Si Vivado asignó otras, corrígelas.
 8. **Validate Design** (F6) debe terminar sin errores.
 9. Crea el HDL wrapper (**Let Vivado manage wrapper**): se genera `hardware_wrapper`.
@@ -260,7 +431,7 @@ Construyes el diseño de bloques a mano. Las tablas de más abajo dicen exactame
 | `fifo_generator_1/M_AXIS`            | `fsm_controller_0/s_axis`                                                                     |
 | `RegisterControl_leds_0/mode`        | `fsm_controller_0/mode`                                                                       |
 | `RegisterControl_leds_0/val`         | `fsm_controller_0/val`                                                                        |
-| `tick_generator_0/tick`              | `fsm_controller_0/tick` y puerto externo `tick`                                             |
+| `tick_generator_0/tick`              | `fsm_controller_0/tick` |                                       
 | `fsm_controller_0/leds`              | puerto externo `led`                                                                          |
 | `processing_system7_0/FCLK_CLK0`     | Entrada de reloj de todos los demás bloques, incluidos `M_AXI_GP0_ACLK` y `S_AXI_GP0_ACLK` |
 | `processing_system7_0/FCLK_RESET0_N` | `rst_ps7_0_100M/ext_reset_in`                                                                 |

@@ -13,7 +13,7 @@ entity tick_generator is
             );
     Port (
         clk    : in  std_logic;
-        <???>    : in  std_logic;
+        rst    : in  std_logic;
         tick   : out std_logic
          );
 end tick_generator;
