@@ -450,19 +450,37 @@ El código en C usa estas tres direcciones base como constantes: si Vivado asign
 
 &#91;Captura: Address Editor con las tres direcciones base\]
 
+![alt text](image-6.png)
+
 &#91;Captura: diagrama de bloques completo\]
+
+![alt text](image-7.png)
 
 &#91;Captura: configuración del DMA de recepción (solo el canal MM2S)\]
 
+![alt text](image-8.png)
+
 &#91;Captura: configuración del DMA de transmisión (solo el canal S2MM)\]
+
+![alt text](image-9.png)
 
 &#91;Captura: configuración de los dos FIFO AXI4-Stream\]
 
+![alt text](image-10.png)
+![alt text](image-11.png)
+![alt text](image-12.png)
+
 &#91;Captura: configuración del AXI4-Stream Broadcaster\]
+
+![alt text](image-13.png)
 
 &#91;Captura: jerarquía `DataStreamDMA` expandida\]
 
+![alt text](image-15.png)
+
 &#91;Resultado: Validate Design sin errores\]
+
+![alt text](image-16.png)
 
 **Qué contiene el diseño**
 
