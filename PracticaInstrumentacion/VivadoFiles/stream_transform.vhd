@@ -32,6 +32,7 @@ end stream_transform;
 architecture Behavioral of stream_transform is
 
     signal data_reg    : std_logic_vector(31 downto 0) := (others => '0');
+    signal keep_reg    : std_logic_vector(3 downto 0) := (others => '0');
     signal last_reg    : std_logic := '0';
     signal valid_reg   : std_logic := '0';
 
@@ -46,7 +47,7 @@ begin
     s_axis_tready <= input_ready;
 
     m_axis_tdata  <= data_reg;
-    m_axis_tkeep  <= s_axis_tkeep;
+    m_axis_tkeep  <= keep_reg;
     m_axis_tlast  <= last_reg;
     m_axis_tvalid <= valid_reg;
 
@@ -58,6 +59,7 @@ begin
         if rising_edge(aclk) then
             if aresetn = '0' then
                 data_reg  <= (others => '0');
+                keep_reg  <= "0000";
                 last_reg  <= '0';
                 valid_reg <= '0';
             
@@ -75,6 +77,7 @@ begin
                     end if;
 
                     data_reg  <= std_logic_vector(y);
+                    keep_reg  <= s_axis_tkeep;
                     last_reg  <= s_axis_tlast;
                     valid_reg <= '1';
                 
