@@ -187,3 +187,4 @@ set_property -dict { PACKAGE_PIN M14   IOSTANDARD LVCMOS33 } [get_ports { led[3]
 ##Crypto SDA 
 
 #set_property -dict { PACKAGE_PIN J15   IOSTANDARD LVCMOS33 } [get_ports { crypto_sda }]; #IO_25_35 Sch=crypto_sda
+set_false_path -to [get_ports {led[*]}]
