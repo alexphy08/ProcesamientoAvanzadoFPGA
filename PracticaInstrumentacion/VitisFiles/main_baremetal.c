@@ -49,17 +49,11 @@
  * Addresses are aligned to 64 bytes and non-overlapping.
  * Verify that both regions are reserved in DDR.
  * ========================================================= */
-#define TX_BUFFER_ADDR        0x00118080U
-#define RX_BUFFER_ADDR        0x001180C0U
-
 #define NUM_WORDS             16U
 #define TRANSFER_BYTES        (NUM_WORDS * sizeof(uint32_t))
 
-static volatile uint32_t * const tx_buffer =
-		(volatile uint32_t *) TX_BUFFER_ADDR;
-
-static volatile uint32_t * const rx_buffer =
-		(volatile uint32_t *) RX_BUFFER_ADDR;
+static volatile uint32_t tx_buffer[NUM_WORDS] __attribute__((aligned(32)));
+static volatile uint32_t rx_buffer[NUM_WORDS] __attribute__((aligned(32)));
 
 /* =========================================================
  * FSM control
@@ -233,8 +227,8 @@ static int run_dma_test(void) {
 	/*
 	 * Prepare memory for the DMA transfers.
 	 */
-	Xil_DCacheFlushRange(TX_BUFFER_ADDR, TRANSFER_BYTES);
-	Xil_DCacheFlushRange(RX_BUFFER_ADDR, TRANSFER_BYTES);
+	Xil_DCacheFlushRange((INTPTR) tx_buffer, TRANSFER_BYTES);
+	Xil_DCacheFlushRange((INTPTR) rx_buffer, TRANSFER_BYTES);
 
 	xil_printf("\r\nResetting DMA...\r\n");
 	dma_reset();
@@ -253,7 +247,7 @@ static int run_dma_test(void) {
 	xil_printf("Configuring S2MM: %u bytes...\r\n",
 			(unsigned int) TRANSFER_BYTES);
 
-	Xil_Out32(DMA_S2MM_BASE + S2MM_DA, RX_BUFFER_ADDR);
+	Xil_Out32(DMA_S2MM_BASE + S2MM_DA, (uint32_t) (INTPTR) rx_buffer);
 	Xil_Out32(DMA_S2MM_BASE + S2MM_LENGTH, TRANSFER_BYTES);
 
 	usleep(100);
@@ -264,7 +258,7 @@ static int run_dma_test(void) {
 	xil_printf("Configuring MM2S: %u bytes...\r\n",
 			(unsigned int) TRANSFER_BYTES);
 
-	Xil_Out32(DMA_MM2S_BASE + MM2S_SA, TX_BUFFER_ADDR);
+	Xil_Out32(DMA_MM2S_BASE + MM2S_SA, (uint32_t) (INTPTR) tx_buffer);
 	Xil_Out32(DMA_MM2S_BASE + MM2S_LENGTH, TRANSFER_BYTES);
 
 	/* Wait for MM2S completion */
@@ -287,7 +281,7 @@ static int run_dma_test(void) {
 	 * Invalidate the cache to read the data written
 	 * by the DMA in DDR.
 	 */
-	Xil_DCacheInvalidateRange(RX_BUFFER_ADDR, TRANSFER_BYTES);
+	Xil_DCacheInvalidateRange((INTPTR) rx_buffer, TRANSFER_BYTES);
 
 	/*
 	 * Compare each result with the transformation
