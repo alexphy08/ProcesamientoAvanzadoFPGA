@@ -19,5 +19,7 @@ apply_bd_automation -rule xilinx.com:bd_rule:processing_system7 \
 set_property -dict [list CONFIG.PCW_USE_M_AXI_GP0 {1} CONFIG.PCW_USE_S_AXI_GP0 {1} \
   CONFIG.PCW_FPGA0_PERIPHERAL_FREQMHZ {100}] [get_bd_cells processing_system7_0]
 
-# Valida y guarda el diseño
-validate_bd_design; save_bd_design
+# El preset reconfigura el PS y borra las redes de FCLK_CLK0 y FCLK_RESET0_N
+# (error BD 41-758). Se reconectan relojes, resets, interfaces y direcciones;
+# ese script ya valida y guarda el diseño.
+source [file join [file dirname [info script]] fix_clocks_resets.tcl]
