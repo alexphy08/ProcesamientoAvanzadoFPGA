@@ -3,13 +3,13 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Nov  5 13:53:04 2026
-# Process ID         : 31536
-# Current directory  : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1
+# Start of session at: Thu Nov  5 13:24:18 2026
+# Process ID         : 7548
+# Current directory  : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1
 # Command line       : vivado.exe -log hardware_processing_system7_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hardware_processing_system7_0_0.tcl
-# Log file           : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/hardware_processing_system7_0_0.vds
-# Journal file       : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1\vivado.jou
-# Running On         : DESKTOP-F0DLAU4
+# Log file           : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/hardware_processing_system7_0_0.vds
+# Journal file       : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-N301Q0S
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 26200
 # Processor Detail   : AMD Ryzen 7 PRO 5750G with Radeon Graphics     
@@ -17,52 +17,56 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16486 MB
-# Swap memory        : 22500 MB
-# Total Virtual      : 38987 MB
-# Available Virtual  : 1875 MB
+# Swap memory        : 12884 MB
+# Total Virtual      : 29371 MB
+# Available Virtual  : 17742 MB
 #-----------------------------------------------------------
 source hardware_processing_system7_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 657.867 ; gain = 227.781
+create_project: Time (s): cpu = 00:00:11 ; elapsed = 00:00:12 . Memory (MB): peak = 618.957 ; gain = 191.422
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/ip_repo/RegisterControl_leds_1_0'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Kevin/ip_repo1/RegisterControl_leds_1_0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Kevin/ip_repo1'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
-WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.cache/ip 
 Command: synth_design -top hardware_processing_system7_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
+WARNING: [Vivado_Tcl 4-393] The 'Synthesis' target of the following IPs are stale, please generate the output products using the generate_target or synth_ip command before running synth_design.
+C:/Kevin/lab_fsm/lab_fsm.srcs/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xci
+
+INFO: [IP_Flow 19-2162] IP 'hardware_processing_system7_0_0' is locked:
+* IP file 'c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xml' for IP 'hardware_processing_system7_0_0' contains stale content.
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 8616
+INFO: [Synth 8-7075] Helper process launched with PID 10928
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:41 . Memory (MB): peak = 1370.742 ; gain = 468.164
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:18 . Memory (MB): peak = 1335.344 ; gain = 466.051
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-6157] synthesizing module 'hardware_processing_system7_0_0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
+INFO: [Synth 8-6157] synthesizing module 'hardware_processing_system7_0_0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'processing_system7_v5_5_processing_system7' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
 INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2676]
 INFO: [Synth 8-6157] synthesizing module 'BIBUF' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2323]
 INFO: [Synth 8-6155] done synthesizing module 'BIBUF' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:2323]
 INFO: [Synth 8-6157] synthesizing module 'PS7' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:123980]
 INFO: [Synth 8-6155] done synthesizing module 'PS7' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:123980]
-INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
-WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'M_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'S_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'S_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'S_AXI_ACP_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'S_AXI_HP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'S_AXI_HP2_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'S_AXI_HP3_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'DMA0_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'DMA1_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'DMA2_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7071] port 'DMA3_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:442]
-INFO: [Synth 8-6155] done synthesizing module 'hardware_processing_system7_0_0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:53]
+INFO: [Synth 8-6155] done synthesizing module 'processing_system7_v5_5_processing_system7' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hdl/verilog/processing_system7_v5_5_processing_system7.v:152]
+WARNING: [Synth 8-7071] port 'M_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'M_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'S_AXI_GP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'S_AXI_GP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'S_AXI_ACP_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'S_AXI_HP0_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'S_AXI_HP1_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'S_AXI_HP2_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'S_AXI_HP3_ARESETN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'DMA0_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'DMA1_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'DMA2_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7071] port 'DMA3_RSTN' of module 'processing_system7_v5_5_processing_system7' is unconnected for instance 'inst' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+WARNING: [Synth 8-7023] instance 'inst' of module 'processing_system7_v5_5_processing_system7' has 685 connections declared, but only 672 given [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:452]
+INFO: [Synth 8-6155] done synthesizing module 'hardware_processing_system7_0_0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/synth/hardware_processing_system7_0_0.v:53]
 WARNING: [Synth 8-7129] Port ENET0_GMII_COL in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ENET0_GMII_CRS in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ENET0_GMII_RX_DV in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
@@ -143,55 +147,55 @@ WARNING: [Synth 8-7129] Port FTMD_TRACEIN_ATID[2] in module processing_system7_v
 WARNING: [Synth 8-7129] Port FTMD_TRACEIN_ATID[1] in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port FTMD_TRACEIN_ATID[0] in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:01:06 . Memory (MB): peak = 1487.621 ; gain = 585.043
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:22 . Memory (MB): peak = 1453.750 ; gain = 584.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:01:07 . Memory (MB): peak = 1487.621 ; gain = 585.043
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 1453.750 ; gain = 584.457
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:01:07 . Memory (MB): peak = 1487.621 ; gain = 585.043
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 1453.750 ; gain = 584.457
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1487.621 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.025 . Memory (MB): peak = 1453.750 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc] for cell 'inst'
-INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hardware_processing_system7_0_0_propImpl.xdc].
+Parsing XDC File [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc] for cell 'inst'
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hardware_processing_system7_0_0_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/hardware_processing_system7_0_0_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
-Parsing XDC File [C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/dont_touch.xdc]
+Parsing XDC File [C:/Kevin/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Kevin/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1503.480 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1471.266 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.063 . Memory (MB): peak = 1503.480 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.053 . Memory (MB): peak = 1472.031 ; gain = 0.766
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:27 ; elapsed = 00:01:59 . Memory (MB): peak = 1503.480 ; gain = 600.902
+Finished Constraint Validation : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 1472.031 ; gain = 602.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:27 ; elapsed = 00:01:59 . Memory (MB): peak = 1503.480 ; gain = 600.902
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:28 ; elapsed = 00:00:36 . Memory (MB): peak = 1472.031 ; gain = 602.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  {C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/dont_touch.xdc}, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Kevin/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:02:00 . Memory (MB): peak = 1503.480 ; gain = 600.902
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:29 ; elapsed = 00:00:37 . Memory (MB): peak = 1472.031 ; gain = 602.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:28 ; elapsed = 00:02:02 . Memory (MB): peak = 1503.480 ; gain = 600.902
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:29 ; elapsed = 00:00:38 . Memory (MB): peak = 1472.031 ; gain = 602.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -236,25 +240,25 @@ WARNING: [Synth 8-7129] Port ENET1_GMII_RXD[4] in module processing_system7_v5_5
 WARNING: [Synth 8-7129] Port ENET1_GMII_RXD[3] in module processing_system7_v5_5_processing_system7 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:02:07 . Memory (MB): peak = 1503.480 ; gain = 600.902
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:40 . Memory (MB): peak = 1472.031 ; gain = 602.738
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:40 ; elapsed = 00:02:21 . Memory (MB): peak = 1799.438 ; gain = 896.859
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1770.844 ; gain = 901.551
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:40 ; elapsed = 00:02:21 . Memory (MB): peak = 1819.777 ; gain = 917.199
+Finished Timing Optimization : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1790.777 ; gain = 921.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:02:21 . Memory (MB): peak = 1822.398 ; gain = 919.820
+Finished Technology Mapping : Time (s): cpu = 00:00:41 ; elapsed = 00:00:50 . Memory (MB): peak = 1793.164 ; gain = 923.871
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -272,37 +276,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:02:57 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Finished IO Insertion : Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:02:57 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:02:57 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:02:57 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:02:57 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:02:57 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -324,25 +328,25 @@ Report Cell Usage:
 |4     |PS7   |     1|
 +------+------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:02:57 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:57 ; elapsed = 00:01:08 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 80 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:44 ; elapsed = 00:02:44 . Memory (MB): peak = 2038.230 ; gain = 1119.793
-Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:03:03 . Memory (MB): peak = 2038.230 ; gain = 1135.652
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:01:05 . Memory (MB): peak = 2009.699 ; gain = 1122.125
+Synthesis Optimization Complete : Time (s): cpu = 00:00:58 ; elapsed = 00:01:09 . Memory (MB): peak = 2009.699 ; gain = 1140.406
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.026 . Memory (MB): peak = 2038.230 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.031 . Memory (MB): peak = 2009.699 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 2050.992 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2022.477 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: 28007008
+Synth Design complete | Checksum: cc53aa86
 INFO: [Common 17-83] Releasing license: Synthesis
-28 Infos, 116 Warnings, 0 Critical Warnings and 0 Errors encountered.
+29 Infos, 117 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:03:30 . Memory (MB): peak = 2050.992 ; gain = 1374.625
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.015 . Memory (MB): peak = 2050.992 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/hardware_processing_system7_0_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:05 ; elapsed = 00:01:19 . Memory (MB): peak = 2022.477 ; gain = 1383.238
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 2022.477 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Kevin/lab_fsm/lab_fsm.runs/hardware_processing_system7_0_0_synth_1/hardware_processing_system7_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file hardware_processing_system7_0_0_utilization_synth.rpt -pb hardware_processing_system7_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:57:08 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:26:00 2026...

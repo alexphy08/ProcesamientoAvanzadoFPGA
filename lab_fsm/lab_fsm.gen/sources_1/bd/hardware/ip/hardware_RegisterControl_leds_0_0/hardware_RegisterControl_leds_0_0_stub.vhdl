@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Thu Nov  5 13:56:20 2026
--- Host        : DESKTOP-F0DLAU4 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {c:/Users/Laboratorio PC
---               3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_RegisterControl_leds_0_0/hardware_RegisterControl_leds_0_0_stub.vhdl}
+-- Date        : Thu Nov  5 13:25:58 2026
+-- Host        : DESKTOP-N301Q0S running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_RegisterControl_leds_0_0/hardware_RegisterControl_leds_0_0_stub.vhdl
 -- Design      : hardware_RegisterControl_leds_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1
@@ -43,7 +43,7 @@ entity hardware_RegisterControl_leds_0_0 is
   attribute CHECK_LICENSE_TYPE : string;
   attribute CHECK_LICENSE_TYPE of hardware_RegisterControl_leds_0_0 : entity is "hardware_RegisterControl_leds_0_0,RegisterControl_leds,{}";
   attribute core_generation_info : string;
-  attribute core_generation_info of hardware_RegisterControl_leds_0_0 : entity is "hardware_RegisterControl_leds_0_0,RegisterControl_leds,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=RegisterControl_leds,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
+  attribute core_generation_info of hardware_RegisterControl_leds_0_0 : entity is "hardware_RegisterControl_leds_0_0,RegisterControl_leds,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=RegisterControl_leds,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}";
   attribute downgradeipidentifiedwarnings : string;
   attribute downgradeipidentifiedwarnings of hardware_RegisterControl_leds_0_0 : entity is "yes";
 end hardware_RegisterControl_leds_0_0;

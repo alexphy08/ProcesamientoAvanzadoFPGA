@@ -2,10 +2,10 @@
 -- Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 -- --------------------------------------------------------------------------------
 -- Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
--- Date        : Thu Nov  5 13:56:46 2026
--- Host        : DESKTOP-F0DLAU4 running 64-bit major release  (build 9200)
--- Command     : write_vhdl -force -mode synth_stub {c:/Users/Laboratorio PC
---               3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axis_broadcaster_0_0/hardware_axis_broadcaster_0_0_stub.vhdl}
+-- Date        : Thu Nov  5 13:25:55 2026
+-- Host        : DESKTOP-N301Q0S running 64-bit major release  (build 9200)
+-- Command     : write_vhdl -force -mode synth_stub
+--               c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axis_broadcaster_0_0/hardware_axis_broadcaster_0_0_stub.vhdl
 -- Design      : hardware_axis_broadcaster_0_0
 -- Purpose     : Stub declaration of top-level module interface
 -- Device      : xc7z020clg400-1

@@ -81,13 +81,11 @@ No se entregan `top_leds.vhd` ni los archivos del IP `RegisterControl_leds`: los
 
 ### 2.1 Crear el proyecto
 
-1. Abre Vivado 2022.2 y crea un proyecto RTL llamado `lab_fsm`.
-2. Selecciona la parte **xc7z020clg400-1** (PYNQ-Z1).
-3. Añade los fuentes VHDL de la etapa 1.
+1. Abre Vivado 2024.2 y crea un proyecto RTL llamado `lab_fsm`.
+2. Selecciona la board PYNQ-Z1.
+3. Añade las fuentes VHDL de la etapa 1.
 
 &#91;Captura: ventana de creación del proyecto con la parte xc7z020clg400-1\]
-
-![alt text](image.png)
 
 ### 2.2 Etapa 1: RTL puro con LEDs y pulsadores
 
@@ -149,202 +147,15 @@ Añade `pynq_c.xdc` como restricciones, define `top_leds` como módulo superior 
 
 &#91;Foto: LEDs de la placa con cada combinación de switches\]
 
-![alt text](image-2.png)
-
-&#91;Código: `tick_generator.vhd` con los huecos corregidos\]
-
-```vhdl
-----------------------------------------------------------------------------------
--- RTL Create by Fabian Castano
-----------------------------------------------------------------------------------
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-
-entity tick_generator is
-    generic (
-        CLK_FREQ_HZ : positive := 125_000_000;
-        HALF_PERIOD_MS : positive := 125
-            );
-    Port (
-        clk    : in  std_logic;
-        rst    : in  std_logic;
-        tick   : out std_logic
-         );
-end tick_generator;
-
-architecture Behavioral of tick_generator is
-    constant COUNT_MAX : positive := 
-        (CLK_FREQ_HZ / 1000) * HALF_PERIOD_MS;
-    signal count    : natural range 0 to COUNT_MAX -1 := 0;
-    signal tick_reg : std_logic := '0';
-begin
-
-    process(clk)
-    begin
-        if rising_edge(clk) then
-            if rst = '0' then
-                count    <= 0;
-                tick_reg <= '0';
-
-            elsif count = COUNT_MAX - 1 then
-                count    <= 0;
-                tick_reg <= not tick_reg;
-
-            else
-                count <= count + 1;
-            end if;
-        end if;
-    end process;
-    
-    tick <= tick_reg;
-    
-end Behavioral;
-```
-
-&#91;Código: `fsm_controller.vhd` con los huecos corregidos\]
-
-```vhdl
-------------------------------------------------------------------------
--- IP RTL create by Fabian Castano
-------------------------------------------------------------------------
-
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-
--- Entity creation
-entity fsm_controller is
-    Port (
-        clk  : in  std_logic;
-        rst  : in  std_logic;
-        
-        mode : in  std_logic_vector(2 downto 0);
-        tick : in  std_logic;
-        val  : in  std_logic_vector(3 downto 0);
-        
-        leds : out std_logic_vector(3 downto 0);
-
-        -- AXI4-Stream slave input
-        s_axis_tdata  : in  std_logic_vector(31 downto 0);
-        s_axis_tkeep  : in  std_logic_vector(3 downto 0);
-        s_axis_tvalid : in  std_logic;
-        s_axis_tready : out std_logic;
-        s_axis_tlast  : in  std_logic
-    );
-end fsm_controller;
-
-architecture Behavioral of fsm_controller is
-
-    type state_type is (IDLE, RIGHT, LEFT, VALUE, DMA);
-
-    signal state    : state_type := IDLE;
-    signal tick_prev : std_logic := '0';
-
-    signal led_reg : std_logic_vector(3 downto 0) := "0000";
-
-begin
-
-    s_axis_tready <= '1' when mode = "100" and tick = '1' and tick_prev = '0' else '0';
-    leds <= led_reg;
-
-    process(clk)
-    begin
-        if rising_edge (clk) then
-
-            if rst = '0' then
-                state     <= IDLE;
-                tick_prev <= '0';
-                led_reg   <= "0000";
-                
-            else
-                -- Default: update the selected operating mode
-                case mode is
-                    when "000"   => state <= IDLE;
-                    when "001"   => state <= RIGHT; 
-                    when "010"   => state <= LEFT;
-                    when "011"   => state <= VALUE;
-                    when "100"   => state <= DMA;
-                    when others  => state <= IDLE;
-                end case;
-
-                -- Remember the previous tick level
-                tick_prev <= tick;
-
-                -- Detect only the rising edge of tick
-                if tick = '1' and tick_prev = '0' then
-
-                    case state is
-                        when IDLE =>
-                            led_reg <= "0001";
-
-                        when RIGHT =>
-                            if led_reg = "1000" then
-                                led_reg <= "0001";
-                            else
-                                led_reg <= led_reg(2 downto 0) & '0';
-                            end if;
-
-                        when LEFT =>
-                            if led_reg = "0001" then
-                                led_reg <= "1000";
-                            else
-                                led_reg <= '0' & led_reg(3 downto 1);
-                            end if;
-                            
-                        when VALUE =>
-                            led_reg <= val;
-                        
-                        when DMA =>
-                            if s_axis_tvalid = '1' and tick = '1' and tick_prev = '0' then
-                                led_reg <= s_axis_tdata(3 downto 0);
-                            end if;
-                    end case;
-
-                end if;
-            end if;
-        end if;
-    end process;
-
-end Behavioral;
-
-```
+&#91;Código: `tick_generator.vhd` y `fsm_controller.vhd` con los huecos corregidos\]
 
 &#91;Resultado: consola Tcl con `check_syntax` sin errores\]
-
-![alt text](image-1.png)
 
 **Preguntas**
 
 1. ¿Con qué frecuencia ocurre el flanco de subida de `tick`? ¿Por qué no es cada 125 ms?
-
-   El flanco de subida ocurre cada **250 ms**, es decir, a **4 Hz**.
-
-   El `tick_generator` cuenta `COUNT_MAX = (125 000 000 / 1000) × 125 = 15 625 000` ciclos. A 125 MHz cada ciclo dura 8 ns, así que eso equivale a 125 ms. Al terminar la cuenta **invierte** `tick_reg`, pero no genera un pulso. Por eso los 125 ms son medio período: `tick` pasa 125 ms en alto y 125 ms en bajo, y el período completo es de 250 ms. Como hay un solo flanco de subida por período, la FSM avanza 4 veces por segundo. Eso coincide con los “cuatro pasos por segundo” de la prueba en la placa.
-
-   
-
 2. ¿Qué pasaría si dejas `CLK_FREQ_HZ = 125_000_000` pero el reloj real fuera de 100 MHz?
-
-   El contador seguiría contando 15 625 000 ciclos, pero cada ciclo duraría 10 ns en vez de 8 ns:
-
-   - Medio período: 15 625 000 × 10 ns = **156,25 ms**
-   - Período completo: **312,5 ms**, o sea **3,2 Hz** en vez de 4 Hz
-
-   Todo iría un 25 % más lento, porque el factor es 125/100 = 1,25. El diseño seguiría funcionando sin errores de síntesis ni de lógica, pero los tiempos no serían los esperados. Por eso en la etapa 3, donde el reloj es `FCLK_CLK0` a 100 MHz, hay que poner `CLK_FREQ_HZ = 100 000 000`.
-
-   
-
 3. El modo `"100"` (DMA) existe en la FSM pero no lo puedes activar con dos switches. ¿Por qué?
-
-4. Por dos razones:
-
-   - **No alcanzan los bits.** En `top_leds` se hace `mode_s <= '0' & sw;`, así que el bit más significativo siempre vale `'0'`. Con dos switches solo se pueden formar `000` a `011` (IDLE, RIGHT, LEFT y VALUE), y para llegar a `"100"` haría falta un tercer bit en `'1'`.
-
-   - **Aunque se pudiera, no habría datos que mostrar.** En la etapa 1 la entrada del stream está fija: `s_axis_tvalid => '0'` y `s_axis_tdata => (others => '0')`. No hay DMA ni FIFO que envíen datos, así que en el estado DMA la FSM nunca vería un dato válido y los LEDs se quedarían con el último valor que tenían.
-
-     
 
 ### 2.3 Etapa 2: la FSM como IP AXI-Lite
 
@@ -382,15 +193,9 @@ val  <= val_reg;
 
 &#91;Captura: pestaña Review and Package del IP Packager\]
 
-![alt text](image-3.png)
-
 &#91;Captura: repositorio de IP añadido en Settings → IP → Repository\]
 
-![alt text](image-4.png)
-
 &#91;Captura: IP `RegisterControl_leds` visible en el IP Catalog\]
-
-![alt text](image-5.png)
 
 **Idea clave:** un IP AXI-Lite es una FSM de bus más un banco de registros. Tu lógica solo ve las señales `mode` y `val`.
 
@@ -406,7 +211,6 @@ Construyes el diseño de bloques a mano. Las tablas de más abajo dicen exactame
 4. Añade el resto de bloques y configúralos según la **tabla de parámetros**. `tick_generator`, `fsm_controller` y `stream_transform` se añaden con **Add Module**.
 5. Haz las conexiones de la **tabla de conexiones**. Para los enlaces AXI puedes usar **Run Connection Automation**, pero revisa después que coincidan con la tabla.
 6. Marca como puertos externos `led` (4 bits) y `tick`, y renómbralos así para que coincidan con `pynq_c.xdc`. Ese archivo incluye líneas de otros puertos (`sysclk`, `sw`, `btn`) que no existen en este diseño: coméntalas.
-Nota: No hicimos externo el tick, porque fueron conexiones internas.
 7. Abre el **Address Editor** y compáralo con la **tabla de direcciones**. Si Vivado asignó otras, corrígelas.
 8. **Validate Design** (F6) debe terminar sin errores.
 9. Crea el HDL wrapper (**Let Vivado manage wrapper**): se genera `hardware_wrapper`.
@@ -456,7 +260,7 @@ Nota: No hicimos externo el tick, porque fueron conexiones internas.
 | `fifo_generator_1/M_AXIS`            | `fsm_controller_0/s_axis`                                                                     |
 | `RegisterControl_leds_0/mode`        | `fsm_controller_0/mode`                                                                       |
 | `RegisterControl_leds_0/val`         | `fsm_controller_0/val`                                                                        |
-| `tick_generator_0/tick`              | `fsm_controller_0/tick` |                                       
+| `tick_generator_0/tick`              | `fsm_controller_0/tick` y puerto externo `tick`                                             |
 | `fsm_controller_0/leds`              | puerto externo `led`                                                                          |
 | `processing_system7_0/FCLK_CLK0`     | Entrada de reloj de todos los demás bloques, incluidos `M_AXI_GP0_ACLK` y `S_AXI_GP0_ACLK` |
 | `processing_system7_0/FCLK_RESET0_N` | `rst_ps7_0_100M/ext_reset_in`                                                                 |
@@ -475,37 +279,19 @@ El código en C usa estas tres direcciones base como constantes: si Vivado asign
 
 &#91;Captura: Address Editor con las tres direcciones base\]
 
-![alt text](image-6.png)
-
 &#91;Captura: diagrama de bloques completo\]
-
-![alt text](image-7.png)
 
 &#91;Captura: configuración del DMA de recepción (solo el canal MM2S)\]
 
-![alt text](image-8.png)
-
 &#91;Captura: configuración del DMA de transmisión (solo el canal S2MM)\]
-
-![alt text](image-9.png)
 
 &#91;Captura: configuración de los dos FIFO AXI4-Stream\]
 
-![alt text](image-10.png)
-![alt text](image-11.png)
-![alt text](image-12.png)
-
 &#91;Captura: configuración del AXI4-Stream Broadcaster\]
-
-![alt text](image-13.png)
 
 &#91;Captura: jerarquía `DataStreamDMA` expandida\]
 
-![alt text](image-15.png)
-
 &#91;Resultado: Validate Design sin errores\]
-
-![alt text](image-16.png)
 
 **Qué contiene el diseño**
 
@@ -526,54 +312,8 @@ Los dos DMA acceden a la DDR por el puerto **S\_AXI\_GP0** del PS.
 **Preguntas**
 
 1. ¿Por qué en esta etapa `CLK_FREQ_HZ` pasó de 125 MHz a 100 MHz?
-
-   Porque cambió la fuente de reloj. En la etapa 1 el diseño usaba el `sysclk` de la placa, un oscilador externo de 125 MHz en el pin H16. En la etapa 3 todos los bloques de la PL, incluido el `tick_generator`, reciben el reloj `FCLK_CLK0` que genera el PS, configurado a 100 MHz. El `sysclk` ya no se usa, y por eso su línea en el `.xdc` está comentada.
-
-   El genérico no mide la frecuencia del reloj: solo sirve para calcular cuántos ciclos contar. Si se dejara en 125 MHz, el `tick` iría un 25 % más lento (3,2 Hz en vez de 4 Hz), como en la pregunta 2 de la etapa 1. Con 100 MHz, `COUNT_MAX = 100 000 × 125 = 12 500 000` ciclos de 10 ns, que vuelven a dar 125 ms por medio período.
-
-   
-
 2. La FSM solo consume un dato por flanco de `tick`. ¿Cuánto tarda en mostrarse el dato 16 en los LEDs?
-
-   Unos **4 segundos**.
-
-   - El `tick` tiene un flanco de subida cada 250 ms (4 Hz).
-
-   - La DMA mueve los 16 datos a `fifo_generator_1` en microsegundos, así que todos quedan esperando en el FIFO.
-
-   - En cada flanco, la FSM pone `tready = 1` durante un ciclo, toma un dato y lo muestra.
-
-   - El primer dato aparece en el primer flanco después de que llegan los datos, lo que puede tardar entre 0 y 250 ms según en qué momento del ciclo de `tick` lleguen. Los 15 restantes necesitan 15 × 250 ms = 3,75 s más.
-
-     
-
 3. `fifo_generator_1` tiene profundidad 16. ¿Qué pasaría si se enviaran 32 palabras? Razona sobre el comportamiento del broadcaster.
-
-   No se perderían datos, pero todo el flujo se frenaría al ritmo de la FSM. Lo más probable es que la DMA de recepción termine por timeout.
-
-   El razonamiento parte de cómo funciona el `axis_broadcaster`. Solo acepta una palabra de su entrada cuando **todas** sus salidas pueden recibirla, porque tiene que entregar la misma palabra a los dos destinos. Si una sola salida pone `tready = 0`, el broadcaster deja de aceptar datos para ambas.
-
-   Con 32 palabras pasaría esto:
-
-   1. **Palabras 1 a 16:** pasan sin problema. Una copia va a `stream_transform` → S2MM → DDR, y la otra llena `fifo_generator_1`.
-   2. **Palabra 17:** `fifo_generator_1` está lleno y pone `tready = 0`. El broadcaster se detiene, y con él también la rama de `stream_transform`, aunque esa rama sí podría seguir recibiendo.
-   3. **Palabras 17 a 32:** se acumulan en `fifo_generator_0`, que también tiene 16 posiciones, así que caben justas. El MM2S puede alcanzar a leer las 32 palabras de memoria y terminar, pero el S2MM solo ha recibido 16 de las 32 que espera.
-   4. **Después:** cada 250 ms la FSM toma un dato de `fifo_generator_1`, se libera una posición y el broadcaster deja pasar **una** palabra más hacia los dos destinos. Las 16 palabras restantes llegan a la DDR a 4 palabras por segundo, o sea, en unos 4 s adicionales.
-
-   Hay dos consecuencias:
-
-   - Si el programa espera la DMA con un timeout menor de unos 8 s (unos 4 s del paso 4 más los 4 s que tarda la FSM en vaciar las primeras 16), reportará **timeout** del S2MM.
-   - Si MODE no está en 4, la FSM nunca consume datos y el sistema queda **bloqueado indefinidamente**. El S2MM no termina y hay que resetear la DMA.
-
-   Este es el mecanismo de *backpressure* de AXI-Stream: el destino más lento impone su ritmo a toda la cadena. Hay tres formas de evitar el problema:
-
-   - Enviar como máximo 16 palabras, que es lo que hace la práctica.
-
-   - Aumentar la profundidad de `fifo_generator_1`.
-
-   - Hacer que la rama de los LEDs no frene el flujo, por ejemplo con `tready` siempre en 1, aceptando que la FSM descarte los datos que no alcanza a mostrar.
-
-     
 
 ---
 

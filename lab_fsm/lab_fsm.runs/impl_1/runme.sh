@@ -25,7 +25,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/impl_1'
+HD_PWD='C:/Kevin/lab_fsm/lab_fsm.runs/impl_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

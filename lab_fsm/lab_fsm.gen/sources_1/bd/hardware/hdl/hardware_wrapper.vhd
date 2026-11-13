@@ -2,8 +2,8 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
---Date        : Thu Nov  5 13:52:32 2026
---Host        : DESKTOP-F0DLAU4 running 64-bit major release  (build 9200)
+--Date        : Thu Nov  5 13:43:51 2026
+--Host        : DESKTOP-N301Q0S running 64-bit major release  (build 9200)
 --Command     : generate_target hardware_wrapper.bd
 --Design      : hardware_wrapper
 --Purpose     : IP block netlist
@@ -35,7 +35,8 @@ entity hardware_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
-    led : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    led : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    tick : out STD_LOGIC
   );
 end hardware_wrapper;
 
@@ -63,7 +64,8 @@ architecture STRUCTURE of hardware_wrapper is
     FIXED_IO_ps_srstb : inout STD_LOGIC;
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
-    led : out STD_LOGIC_VECTOR ( 3 downto 0 )
+    led : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    tick : out STD_LOGIC
   );
   end component hardware;
 begin
@@ -90,6 +92,7 @@ hardware_i: component hardware
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
-      led(3 downto 0) => led(3 downto 0)
+      led(3 downto 0) => led(3 downto 0),
+      tick => tick
     );
 end STRUCTURE;

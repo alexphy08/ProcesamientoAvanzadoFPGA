@@ -1,0 +1,13 @@
+# Salidas generadas por Vivado (se regeneran)
+*.runs/
+*.cache/
+*.gen/
+*.jou
+*.log
+scripts/fpga/fix.log
+
+# Salidas de compilacion de Vitis
+build/
+
+# Python
+__pycache__/

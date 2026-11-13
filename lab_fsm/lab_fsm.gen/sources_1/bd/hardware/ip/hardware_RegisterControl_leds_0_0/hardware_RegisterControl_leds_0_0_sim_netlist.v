@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Thu Nov  5 13:56:20 2026
-// Host        : DESKTOP-F0DLAU4 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode funcsim {c:/Users/Laboratorio PC
-//               3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_RegisterControl_leds_0_0/hardware_RegisterControl_leds_0_0_sim_netlist.v}
+// Date        : Thu Nov  5 13:25:58 2026
+// Host        : DESKTOP-N301Q0S running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode funcsim
+//               c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_RegisterControl_leds_0_0/hardware_RegisterControl_leds_0_0_sim_netlist.v
 // Design      : hardware_RegisterControl_leds_0_0
 // Purpose     : This verilog netlist is a functional simulation representation of the design and should not be modified
 //               or synthesized. This netlist cannot be used for SDF annotated simulation.
