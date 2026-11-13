@@ -12,13 +12,13 @@
 #ifdef XPAR_AXI_DMA_RECEPTION_BASEADDR
 #define DMA_MM2S_BASE      XPAR_AXI_DMA_RECEPTION_BASEADDR
 #else
-#define DMA_MM2S_BASE      0x40400000U
+#error "Plataforma sin DMA: crea la app sobre la plataforma del lab_fsm (hw_lab_fsm)"
 #endif
 
 #ifdef XPAR_AXI_DMA_TRANSMISSION_BASEADDR
 #define DMA_S2MM_BASE      XPAR_AXI_DMA_TRANSMISSION_BASEADDR
 #else
-#define DMA_S2MM_BASE      0x40410000U
+#error "Plataforma sin DMA: crea la app sobre la plataforma del lab_fsm (hw_lab_fsm)"
 #endif
 
 #define MM2S_DMACR         0x00U         // DMA Control Register
@@ -44,7 +44,7 @@
 #ifdef XPAR_REGISTERCONTROL_LEDS_0_S00_AXI_BASEADDR
 #define FSM_CONTROL_BASEADDR  XPAR_REGISTERCONTROL_LEDS_0_S00_AXI_BASEADDR
 #else
-#define FSM_CONTROL_BASEADDR  0x43C00000U
+#error "Plataforma sin DMA: crea la app sobre la plataforma del lab_fsm (hw_lab_fsm)"
 #endif
 
 #define FSM_MODE_REG          0x00U
