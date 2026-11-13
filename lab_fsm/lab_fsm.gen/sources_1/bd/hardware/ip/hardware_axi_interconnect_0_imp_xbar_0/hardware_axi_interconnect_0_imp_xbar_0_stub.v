@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Thu Nov  5 13:57:09 2026
-// Host        : DESKTOP-F0DLAU4 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {c:/Users/Laboratorio PC
-//               3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_stub.v}
+// Date        : Thu Nov  5 13:44:50 2026
+// Host        : DESKTOP-N301Q0S running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_stub.v
 // Design      : hardware_axi_interconnect_0_imp_xbar_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "hardware_axi_interconnect_0_imp_xbar_0,axi_crossbar_v2_1_34_axi_crossbar,{}" *) (* CORE_GENERATION_INFO = "hardware_axi_interconnect_0_imp_xbar_0,axi_crossbar_v2_1_34_axi_crossbar,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_crossbar,x_ipVersion=2.1,x_ipCoreRevision=34,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_FAMILY=zynq,C_NUM_SLAVE_SLOTS=2,C_NUM_MASTER_SLOTS=1,C_AXI_ID_WIDTH=1,C_AXI_ADDR_WIDTH=32,C_AXI_DATA_WIDTH=32,C_AXI_PROTOCOL=0,C_NUM_ADDR_RANGES=1,C_M_AXI_BASE_ADDR=0x0000000000000000,C_M_AXI_ADDR_WIDTH=0x0000001d,C_S_AXI_BASE_ID=0x0000000100000000,C_S_AXI_THREAD_ID_WIDTH=0x0000000000000000,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_M_AXI_WRITE_CONNECTIVITY=0x00000002,C_M_AXI_READ_CONNECTIVITY=0x00000001,C_R_REGISTER=0,C_S_AXI_SINGLE_THREAD=0x0000000000000000,C_S_AXI_WRITE_ACCEPTANCE=0x0000000800000002,C_S_AXI_READ_ACCEPTANCE=0x0000000200000008,C_M_AXI_WRITE_ISSUING=0x00000008,C_M_AXI_READ_ISSUING=0x00000008,C_S_AXI_ARB_PRIORITY=0x0000000000000000,C_M_AXI_SECURE=0x00000000,C_CONNECTIVITY_MODE=1}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "hardware_axi_interconnect_0_imp_xbar_0,axi_crossbar_v2_1_34_axi_crossbar,{}" *) (* CORE_GENERATION_INFO = "hardware_axi_interconnect_0_imp_xbar_0,axi_crossbar_v2_1_34_axi_crossbar,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=ip,x_ipName=axi_crossbar,x_ipVersion=2.1,x_ipCoreRevision=34,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_FAMILY=zynq,C_NUM_SLAVE_SLOTS=2,C_NUM_MASTER_SLOTS=1,C_AXI_ID_WIDTH=1,C_AXI_ADDR_WIDTH=32,C_AXI_DATA_WIDTH=32,C_AXI_PROTOCOL=0,C_NUM_ADDR_RANGES=2,C_M_AXI_BASE_ADDR=0x00000000fc0000000000000000000000,C_M_AXI_ADDR_WIDTH=0x000000180000001d,C_S_AXI_BASE_ID=0x0000000100000000,C_S_AXI_THREAD_ID_WIDTH=0x0000000000000000,C_AXI_SUPPORTS_USER_SIGNALS=0,C_AXI_AWUSER_WIDTH=1,C_AXI_ARUSER_WIDTH=1,C_AXI_WUSER_WIDTH=1,C_AXI_RUSER_WIDTH=1,C_AXI_BUSER_WIDTH=1,C_M_AXI_WRITE_CONNECTIVITY=0x00000002,C_M_AXI_READ_CONNECTIVITY=0x00000001,C_R_REGISTER=0,C_S_AXI_SINGLE_THREAD=0x0000000000000000,C_S_AXI_WRITE_ACCEPTANCE=0x0000000800000002,C_S_AXI_READ_ACCEPTANCE=0x0000000200000008,C_M_AXI_WRITE_ISSUING=0x00000008,C_M_AXI_READ_ISSUING=0x00000008,C_S_AXI_ARB_PRIORITY=0x0000000000000000,C_M_AXI_SECURE=0x00000000,C_CONNECTIVITY_MODE=1}" *) (* DowngradeIPIdentifiedWarnings = "yes" *) 
 (* X_CORE_INFO = "axi_crossbar_v2_1_34_axi_crossbar,Vivado 2024.2" *) 
 module hardware_axi_interconnect_0_imp_xbar_0(aclk, aresetn, s_axi_awid, s_axi_awaddr, 
   s_axi_awlen, s_axi_awsize, s_axi_awburst, s_axi_awlock, s_axi_awcache, s_axi_awprot, 

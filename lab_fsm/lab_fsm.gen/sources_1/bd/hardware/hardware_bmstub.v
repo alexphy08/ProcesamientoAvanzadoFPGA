@@ -27,7 +27,8 @@ module hardware (
   FIXED_IO_ps_srstb,
   FIXED_IO_ps_clk,
   FIXED_IO_ps_porb,
-  led
+  led,
+  tick
 );
 
   (* X_INTERFACE_INFO = "xilinx.com:interface:ddrx:1.0 DDR CAS_N" *)
@@ -78,6 +79,8 @@ module hardware (
   inout FIXED_IO_ps_porb;
   (* X_INTERFACE_IGNORE = "true" *)
   output [3:0]led;
+  (* X_INTERFACE_IGNORE = "true" *)
+  output tick;
 
   // stub module has no contents
 

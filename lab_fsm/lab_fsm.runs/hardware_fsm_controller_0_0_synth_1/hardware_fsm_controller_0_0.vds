@@ -3,13 +3,13 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Nov  5 13:53:04 2026
-# Process ID         : 14764
-# Current directory  : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1
+# Start of session at: Thu Nov  5 13:24:18 2026
+# Process ID         : 17980
+# Current directory  : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1
 # Command line       : vivado.exe -log hardware_fsm_controller_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hardware_fsm_controller_0_0.tcl
-# Log file           : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1/hardware_fsm_controller_0_0.vds
-# Journal file       : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1\vivado.jou
-# Running On         : DESKTOP-F0DLAU4
+# Log file           : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1/hardware_fsm_controller_0_0.vds
+# Journal file       : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-N301Q0S
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 26200
 # Processor Detail   : AMD Ryzen 7 PRO 5750G with Radeon Graphics     
@@ -17,17 +17,16 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16486 MB
-# Swap memory        : 22500 MB
-# Total Virtual      : 38987 MB
-# Available Virtual  : 1920 MB
+# Swap memory        : 12884 MB
+# Total Virtual      : 29371 MB
+# Available Virtual  : 18318 MB
 #-----------------------------------------------------------
 source hardware_fsm_controller_0_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 659.496 ; gain = 229.773
+create_project: Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 618.898 ; gain = 190.309
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/ip_repo/RegisterControl_leds_1_0'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Kevin/ip_repo1/RegisterControl_leds_1_0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Kevin/ip_repo1'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
-WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.cache/ip 
 Command: synth_design -top hardware_fsm_controller_0_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
@@ -35,15 +34,15 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 20788
+INFO: [Synth 8-7075] Helper process launched with PID 19388
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:41 . Memory (MB): peak = 1361.922 ; gain = 466.992
+Starting RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:00:17 . Memory (MB): peak = 1329.547 ; gain = 468.656
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'hardware_fsm_controller_0_0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fsm_controller_0_0/synth/hardware_fsm_controller_0_0.vhd:72]
-INFO: [Synth 8-3491] module 'fsm_controller' declared at 'C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/PracticaInstrumentacion/VivadoFiles/fsm_controller.vhd:10' bound to instance 'U0' of component 'fsm_controller' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fsm_controller_0_0/synth/hardware_fsm_controller_0_0.vhd:115]
-INFO: [Synth 8-638] synthesizing module 'fsm_controller' [C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/PracticaInstrumentacion/VivadoFiles/fsm_controller.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'fsm_controller' (0#1) [C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/PracticaInstrumentacion/VivadoFiles/fsm_controller.vhd:30]
-INFO: [Synth 8-256] done synthesizing module 'hardware_fsm_controller_0_0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fsm_controller_0_0/synth/hardware_fsm_controller_0_0.vhd:72]
+INFO: [Synth 8-638] synthesizing module 'hardware_fsm_controller_0_0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fsm_controller_0_0/synth/hardware_fsm_controller_0_0.vhd:72]
+INFO: [Synth 8-3491] module 'fsm_controller' declared at 'C:/Kevin/lab_fsm/lab_fsm.srcs/sources_1/imports/VivadoFiles/fsm_controller.vhd:10' bound to instance 'U0' of component 'fsm_controller' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fsm_controller_0_0/synth/hardware_fsm_controller_0_0.vhd:115]
+INFO: [Synth 8-638] synthesizing module 'fsm_controller' [C:/Kevin/lab_fsm/lab_fsm.srcs/sources_1/imports/VivadoFiles/fsm_controller.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'fsm_controller' (0#1) [C:/Kevin/lab_fsm/lab_fsm.srcs/sources_1/imports/VivadoFiles/fsm_controller.vhd:30]
+INFO: [Synth 8-256] done synthesizing module 'hardware_fsm_controller_0_0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fsm_controller_0_0/synth/hardware_fsm_controller_0_0.vhd:72]
 WARNING: [Synth 8-7129] Port s_axis_tdata[31] in module fsm_controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axis_tdata[30] in module fsm_controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axis_tdata[29] in module fsm_controller is either unconnected or has no load
@@ -78,48 +77,48 @@ WARNING: [Synth 8-7129] Port s_axis_tkeep[1] in module fsm_controller is either 
 WARNING: [Synth 8-7129] Port s_axis_tkeep[0] in module fsm_controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axis_tlast in module fsm_controller is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:11 ; elapsed = 00:01:06 . Memory (MB): peak = 1473.363 ; gain = 578.434
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1438.645 ; gain = 577.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:11 ; elapsed = 00:01:07 . Memory (MB): peak = 1473.363 ; gain = 578.434
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1438.645 ; gain = 577.754
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:11 ; elapsed = 00:01:07 . Memory (MB): peak = 1473.363 ; gain = 578.434
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:20 . Memory (MB): peak = 1438.645 ; gain = 577.754
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.009 . Memory (MB): peak = 1473.363 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1438.645 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1491.602 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1501.297 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.116 . Memory (MB): peak = 1492.727 ; gain = 1.125
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.032 . Memory (MB): peak = 1501.328 ; gain = 0.031
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:01:36 . Memory (MB): peak = 1492.727 ; gain = 597.797
+Finished Constraint Validation : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1501.328 ; gain = 640.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:01:36 . Memory (MB): peak = 1492.727 ; gain = 597.797
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1501.328 ; gain = 640.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:01:37 . Memory (MB): peak = 1492.727 ; gain = 597.797
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1501.328 ; gain = 640.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:20 ; elapsed = 00:01:38 . Memory (MB): peak = 1492.727 ; gain = 597.797
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:26 ; elapsed = 00:00:33 . Memory (MB): peak = 1501.328 ; gain = 640.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -183,25 +182,25 @@ WARNING: [Synth 8-7129] Port s_axis_tkeep[1] in module hardware_fsm_controller_0
 WARNING: [Synth 8-7129] Port s_axis_tkeep[0] in module hardware_fsm_controller_0_0 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port s_axis_tlast in module hardware_fsm_controller_0_0 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:22 ; elapsed = 00:01:42 . Memory (MB): peak = 1514.094 ; gain = 619.164
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:36 . Memory (MB): peak = 1501.328 ; gain = 640.438
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:31 ; elapsed = 00:01:53 . Memory (MB): peak = 1658.605 ; gain = 763.676
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 1628.082 ; gain = 767.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:31 ; elapsed = 00:01:53 . Memory (MB): peak = 1658.605 ; gain = 763.676
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 1628.082 ; gain = 767.191
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:31 ; elapsed = 00:01:53 . Memory (MB): peak = 1668.168 ; gain = 773.238
+Finished Technology Mapping : Time (s): cpu = 00:00:37 ; elapsed = 00:00:45 . Memory (MB): peak = 1637.672 ; gain = 776.781
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -219,37 +218,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:47 ; elapsed = 00:02:20 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Finished IO Insertion : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 1854.105 ; gain = 993.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:47 ; elapsed = 00:02:20 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 1854.105 ; gain = 993.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:02:20 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 1854.105 ; gain = 993.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:02:20 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 1854.105 ; gain = 993.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:47 ; elapsed = 00:02:20 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 1854.105 ; gain = 993.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:47 ; elapsed = 00:02:20 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 1854.105 ; gain = 993.215
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -273,16 +272,16 @@ Report Cell Usage:
 |6     |FDRE |     8|
 +------+-----+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:47 ; elapsed = 00:02:20 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:55 ; elapsed = 00:01:04 . Memory (MB): peak = 1854.105 ; gain = 993.215
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 34 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:33 ; elapsed = 00:02:05 . Memory (MB): peak = 1885.203 ; gain = 970.910
-Synthesis Optimization Complete : Time (s): cpu = 00:00:47 ; elapsed = 00:02:22 . Memory (MB): peak = 1885.203 ; gain = 990.273
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:39 ; elapsed = 00:01:02 . Memory (MB): peak = 1854.105 ; gain = 930.531
+Synthesis Optimization Complete : Time (s): cpu = 00:00:55 ; elapsed = 00:01:05 . Memory (MB): peak = 1854.105 ; gain = 993.215
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1894.324 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1854.105 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1898.000 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1856.125 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
@@ -290,8 +289,8 @@ Synth Design complete | Checksum: 3ef8ed27
 INFO: [Common 17-83] Releasing license: Synthesis
 21 Infos, 68 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:53 ; elapsed = 00:02:41 . Memory (MB): peak = 1898.000 ; gain = 1222.430
-Write ShapeDB Complete: Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.012 . Memory (MB): peak = 1898.000 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1/hardware_fsm_controller_0_0.dcp' has been generated.
+synth_design: Time (s): cpu = 00:01:02 ; elapsed = 00:01:19 . Memory (MB): peak = 1856.125 ; gain = 1219.859
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1856.125 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Kevin/lab_fsm/lab_fsm.runs/hardware_fsm_controller_0_0_synth_1/hardware_fsm_controller_0_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file hardware_fsm_controller_0_0_utilization_synth.rpt -pb hardware_fsm_controller_0_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:56:19 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:25:58 2026...

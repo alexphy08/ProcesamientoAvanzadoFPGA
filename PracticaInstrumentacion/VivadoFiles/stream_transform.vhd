@@ -14,14 +14,14 @@ entity stream_transform is
         aresetn    : in  std_logic;
 
         -- AXI4-Stream slave input
-        s_axis_tdata  : in  std_logic_vector (31 downto 0);
+        s_axis_tdata  : in  <???>(31 downto 0);
         s_axis_tkeep  : in  std_logic_vector(3 downto 0);
         s_axis_tvalid : in  std_logic;
         s_axis_tready : out std_logic;
         s_axis_tlast  : in  std_logic;
 
         -- AXI4-Stream master output
-        m_axis_tdata  : out std_logic_vector(31 downto 0);
+        m_axis_tdata  : out std_logic_vector(31 <???> 0);
         m_axis_tkeep  : out std_logic_vector(3 downto 0);
         m_axis_tvalid : out std_logic;
         m_axis_tready : in  std_logic;
@@ -32,7 +32,6 @@ end stream_transform;
 architecture Behavioral of stream_transform is
 
     signal data_reg    : std_logic_vector(31 downto 0) := (others => '0');
-    signal keep_reg    : std_logic_vector(3 downto 0) := (others => '0');
     signal last_reg    : std_logic := '0';
     signal valid_reg   : std_logic := '0';
 
@@ -47,7 +46,7 @@ begin
     s_axis_tready <= input_ready;
 
     m_axis_tdata  <= data_reg;
-    m_axis_tkeep  <= keep_reg;
+    m_axis_tkeep  <= s_axis_tkeep;
     m_axis_tlast  <= last_reg;
     m_axis_tvalid <= valid_reg;
 
@@ -59,7 +58,6 @@ begin
         if rising_edge(aclk) then
             if aresetn = '0' then
                 data_reg  <= (others => '0');
-                keep_reg  <= "0000";
                 last_reg  <= '0';
                 valid_reg <= '0';
             
@@ -70,14 +68,13 @@ begin
 
                     if x(0) = '1' then
                         -- Odd: add 5
-                        y := x + to_unsigned(5, 32);
+                        y := x + to_unsigned(<???>, 32);
                     else
                         -- Even: subtract 2
-                        y := x - to_unsigned(2, 32);
+                        y := x - <???>(2, 32);
                     end if;
 
                     data_reg  <= std_logic_vector(y);
-                    keep_reg  <= s_axis_tkeep;
                     last_reg  <= s_axis_tlast;
                     valid_reg <= '1';
                 

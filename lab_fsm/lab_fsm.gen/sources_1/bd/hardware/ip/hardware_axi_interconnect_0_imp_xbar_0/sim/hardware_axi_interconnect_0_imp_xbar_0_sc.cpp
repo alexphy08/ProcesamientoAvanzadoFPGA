@@ -67,7 +67,7 @@ hardware_axi_interconnect_0_imp_xbar_0_sc::hardware_axi_interconnect_0_imp_xbar_
     model_param_props.addLong("C_AXI_ADDR_WIDTH", "32");
     model_param_props.addLong("C_AXI_DATA_WIDTH", "32");
     model_param_props.addLong("C_AXI_PROTOCOL", "0");
-    model_param_props.addLong("C_NUM_ADDR_RANGES", "1");
+    model_param_props.addLong("C_NUM_ADDR_RANGES", "2");
     model_param_props.addLong("C_AXI_SUPPORTS_USER_SIGNALS", "0");
     model_param_props.addLong("C_AXI_AWUSER_WIDTH", "1");
     model_param_props.addLong("C_AXI_ARUSER_WIDTH", "1");
@@ -77,8 +77,8 @@ hardware_axi_interconnect_0_imp_xbar_0_sc::hardware_axi_interconnect_0_imp_xbar_
     model_param_props.addLong("C_R_REGISTER", "0");
     model_param_props.addLong("C_CONNECTIVITY_MODE", "1");
     model_param_props.addString("C_FAMILY", "zynq");
-    model_param_props.addBitString("C_M_AXI_BASE_ADDR", "0000000000000000000000000000000000000000000000000000000000000000", 64);
-    model_param_props.addBitString("C_M_AXI_ADDR_WIDTH", "00000000000000000000000000011101", 32);
+    model_param_props.addBitString("C_M_AXI_BASE_ADDR", "00000000000000000000000000000000111111000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000", 128);
+    model_param_props.addBitString("C_M_AXI_ADDR_WIDTH", "0000000000000000000000000001100000000000000000000000000000011101", 64);
     model_param_props.addBitString("C_S_AXI_BASE_ID", "0000000000000000000000000000000100000000000000000000000000000000", 64);
     model_param_props.addBitString("C_S_AXI_THREAD_ID_WIDTH", "0000000000000000000000000000000000000000000000000000000000000000", 64);
     model_param_props.addBitString("C_M_AXI_WRITE_CONNECTIVITY", "00000000000000000000000000000010", 32);

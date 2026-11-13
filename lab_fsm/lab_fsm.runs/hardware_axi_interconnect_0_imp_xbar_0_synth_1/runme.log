@@ -8,17 +8,16 @@
   **** SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
   **** IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
   **** SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-  **** Start of session at: Thu Nov  5 13:53:05 2026
+  **** Start of session at: Thu Nov  5 13:44:02 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source hardware_axi_interconnect_0_imp_xbar_0.tcl -notrace
-create_project: Time (s): cpu = 00:00:13 ; elapsed = 00:00:17 . Memory (MB): peak = 656.809 ; gain = 229.066
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 620.797 ; gain = 190.578
 INFO: [IP_Flow 19-234] Refreshing IP repositories
-INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/ip_repo/RegisterControl_leds_1_0'.
+WARNING: [IP_Flow 19-3685] Ignored loading user repository 'c:/Kevin/ip_repo1/RegisterControl_leds_1_0'. The path is contained within another repository.
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Kevin/ip_repo1'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.2/data/ip'.
-WARNING: [IP_Flow 19-4995] The host OS only allows 260 characters in a normal path. The IP cache path is more than 80 characters. If you experience issues with IP caching, please consider changing the IP cache to a location with a shorter path. Alternately consider using the OS subst command to map part of the path to a drive letter. 
-Current IP cache path is c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.cache/ip 
 INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: hardware_axi_interconnect_0_imp_xbar_0
 Command: synth_design -top hardware_axi_interconnect_0_imp_xbar_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
 Starting synth_design
@@ -27,112 +26,114 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020
 INFO: [Device 21-403] Loading part xc7z020clg400-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 36124
+INFO: [Synth 8-7075] Helper process launched with PID 7748
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:01:06 . Memory (MB): peak = 1373.555 ; gain = 467.820
+Starting RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:08 . Memory (MB): peak = 1339.426 ; gain = 467.605
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:152]
-WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:154]
-INFO: [Synth 8-6157] synthesizing module 'hardware_axi_interconnect_0_imp_xbar_0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:53]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_axi_crossbar' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_crossbar' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2232]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_si_transactor' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_comparator_static' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_carry_and' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_carry_and' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_comparator_static' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_MODE' is already specified; last one will take precedence [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:152]
+WARNING: [Synth 8-10507] attribute 'X_INTERFACE_PARAMETER' is already specified; last one will take precedence [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:154]
+INFO: [Synth 8-6157] synthesizing module 'hardware_axi_interconnect_0_imp_xbar_0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:53]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_axi_crossbar' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_crossbar' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2232]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_si_transactor' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_comparator_static' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_carry_and' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_carry_and' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:60]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_comparator_static' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_comparator_static__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_comparator_static__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2119]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
 INFO: [Synth 8-6157] synthesizing module 'SRLC32E' [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:149195]
 INFO: [Synth 8-6155] done synthesizing module 'SRLC32E' (0#1) [C:/Xilinx/Vivado/2024.2/scripts/rt/data/unisim_comp.v:149195]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_si_transactor' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_si_transactor__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_si_transactor__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_splitter' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_splitter' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_wdata_router' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_wdata_router' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized1' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized1' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_wdata_mux' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized1' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized1' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_wdata_mux' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axi_register_slice' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:3721]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
-INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
-INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized1' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized1' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized2' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized2' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
-INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axi_register_slice' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:3721]
-WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_33_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
-WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_33_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized2' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized2' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized1' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized1' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized1' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized1' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_wdata_mux__parameterized0' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
-INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized1' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
-INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized1' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_wdata_mux__parameterized0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
-WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_33_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
-WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_33_axi_register_slice' has 93 connections declared, but only 92 given [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_decerr_slave' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
-INFO: [Synth 8-155] case statement is not full and has no default [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3626]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_decerr_slave' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
-INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_arbiter' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:420]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized2' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized2' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized3' [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized3' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_arbiter' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:420]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_crossbar' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2232]
-INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_axi_crossbar' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
-INFO: [Synth 8-6155] done synthesizing module 'hardware_axi_interconnect_0_imp_xbar_0' (0#1) [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:53]
-WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
-WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
-WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.gen_debug_r_single_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4184]
-WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.active_id_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4142]
-WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.gen_debug_r_single_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4184]
-WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.active_id_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4142]
-WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
-WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
-WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1034]
-WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
-WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
-WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1034]
-WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
-WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_si_transactor' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_si_transactor__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_si_transactor__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3791]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_splitter' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_splitter' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4451]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_wdata_router' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_wdata_router' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4724]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized1' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized1' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_wdata_mux' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized1' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized1' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_wdata_mux' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axi_register_slice' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:3721]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_axi2vector' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:59]
+INFO: [Synth 8-6157] synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6155] done synthesizing module 'axi_infrastructure_v1_1_0_vector2axi' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/ec67/hdl/axi_infrastructure_v1_1_vl_rfs.v:473]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized1' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized1' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6157] synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized2' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axic_register_slice__parameterized2' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:1492]
+INFO: [Synth 8-6155] done synthesizing module 'axi_register_slice_v2_1_33_axi_register_slice' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/3ee4/hdl/axi_register_slice_v2_1_vl_rfs.v:3721]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_33_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_33_axi_register_slice' has 93 connections declared, but only 92 given [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized2' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_decoder__parameterized2' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:790]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized1' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized1' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_ndeep_srl__parameterized1' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1129]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_srl_fifo__parameterized1' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:694]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_wdata_mux__parameterized0' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+INFO: [Synth 8-6157] synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized1' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:982]
+INFO: [Synth 8-6155] done synthesizing module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized1' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:884]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_wdata_mux__parameterized0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4550]
+WARNING: [Synth 8-7071] port 'aclk2x' of module 'axi_register_slice_v2_1_33_axi_register_slice' is unconnected for instance 'reg_slice_mi' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+WARNING: [Synth 8-7023] instance 'reg_slice_mi' of module 'axi_register_slice_v2_1_33_axi_register_slice' has 93 connections declared, but only 92 given [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3116]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_decerr_slave' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
+INFO: [Synth 8-155] case statement is not full and has no default [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3626]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_decerr_slave' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:3493]
+INFO: [Synth 8-6157] synthesizing module 'axi_crossbar_v2_1_34_addr_arbiter' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:420]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized2' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized2' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6157] synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized3' [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'generic_baseblocks_v2_1_2_mux_enc__parameterized3' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/0c28/hdl/generic_baseblocks_v2_1_vl_rfs.v:2436]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_addr_arbiter' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:420]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_crossbar' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2232]
+INFO: [Synth 8-6155] done synthesizing module 'axi_crossbar_v2_1_34_axi_crossbar' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4871]
+INFO: [Synth 8-6155] done synthesizing module 'hardware_axi_interconnect_0_imp_xbar_0' (0#1) [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/synth/hardware_axi_interconnect_0_imp_xbar_0.v:53]
+WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
+WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
+WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.gen_debug_r_single_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4184]
+WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.active_id_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4142]
+WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.gen_debug_r_single_thread.debug_r_beat_cnt_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4184]
+WARNING: [Synth 8-6014] Unused sequential element gen_single_thread.active_id_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:4142]
+WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
+WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
+WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1034]
+WARNING: [Synth 8-6014] Unused sequential element areset_d1_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:747]
+WARNING: [Synth 8-6014] Unused sequential element S_READY_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:786]
+WARNING: [Synth 8-6014] Unused sequential element s_ready_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/65ce/hdl/axi_data_fifo_v2_1_vl_rfs.v:1034]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[0].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
+WARNING: [Synth 8-6014] Unused sequential element gen_master_slots[1].gen_mi_write.gen_debug_w.debug_w_beat_cnt_i_reg was removed.  [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ipshared/a7e3/hdl/axi_crossbar_v2_1_vl_rfs.v:2991]
 WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_33_axic_register_slice is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ARESET in module axi_register_slice_v2_1_33_axic_register_slice is either unconnected or has no load
 WARNING: [Synth 8-7129] Port ACLK in module axi_register_slice_v2_1_33_axic_register_slice__parameterized0 is either unconnected or has no load
@@ -235,50 +236,50 @@ WARNING: [Synth 8-7129] Port S_AXI_WDATA[14] in module axi_crossbar_v2_1_34_cros
 WARNING: [Synth 8-7129] Port S_AXI_WDATA[13] in module axi_crossbar_v2_1_34_crossbar is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:01:22 . Memory (MB): peak = 1626.000 ; gain = 720.266
+Finished RTL Elaboration : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1592.324 ; gain = 720.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:20 ; elapsed = 00:01:23 . Memory (MB): peak = 1626.000 ; gain = 720.266
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1592.324 ; gain = 720.504
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:20 ; elapsed = 00:01:23 . Memory (MB): peak = 1626.000 ; gain = 720.266
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1592.324 ; gain = 720.504
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.070 . Memory (MB): peak = 1626.000 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.035 . Memory (MB): peak = 1592.324 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_ooc.xdc] for cell 'inst'
-Finished Parsing XDC File [c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_ooc.xdc] for cell 'inst'
-Parsing XDC File [C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/dont_touch.xdc]
-Finished Parsing XDC File [C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/dont_touch.xdc]
+Parsing XDC File [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_ooc.xdc] for cell 'inst'
+Finished Parsing XDC File [c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_ooc.xdc] for cell 'inst'
+Parsing XDC File [C:/Kevin/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Kevin/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1720.012 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1675.844 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.444 . Memory (MB): peak = 1720.027 ; gain = 0.016
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.037 . Memory (MB): peak = 1675.852 ; gain = 0.008
 INFO: [Designutils 20-5008] Incremental synthesis strategy off
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:36 ; elapsed = 00:01:57 . Memory (MB): peak = 1720.027 ; gain = 814.293
+Finished Constraint Validation : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1675.852 ; gain = 804.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:36 ; elapsed = 00:01:57 . Memory (MB): peak = 1720.027 ; gain = 814.293
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1675.852 ; gain = 804.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  {C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/dont_touch.xdc}, line 9).
+Applied set_property KEEP_HIERARCHY = SOFT for inst. (constraint file  C:/Kevin/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/dont_touch.xdc, line 9).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:36 ; elapsed = 00:01:57 . Memory (MB): peak = 1720.027 ; gain = 814.293
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1675.852 ; gain = 804.031
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo'
 INFO: [Synth 8-802] inferred FSM for state register 'state_reg' in module 'axi_data_fifo_v2_1_32_axic_reg_srl_fifo__parameterized0'
@@ -317,7 +318,7 @@ INFO: [Synth 8-3354] encoded FSM with state register 'state_reg' using encoding 
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'gen_axi.write_cs_reg' using encoding 'one-hot' in module 'axi_crossbar_v2_1_34_decerr_slave'
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:02:00 . Memory (MB): peak = 1720.027 ; gain = 814.293
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1675.852 ; gain = 804.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -366,25 +367,25 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:43 ; elapsed = 00:02:11 . Memory (MB): peak = 1720.027 ; gain = 814.293
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1675.852 ; gain = 804.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:53 ; elapsed = 00:02:25 . Memory (MB): peak = 1720.027 ; gain = 814.293
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:27 ; elapsed = 00:00:28 . Memory (MB): peak = 1675.852 ; gain = 804.031
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:55 ; elapsed = 00:02:27 . Memory (MB): peak = 1752.062 ; gain = 846.328
+Finished Timing Optimization : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1703.227 ; gain = 831.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:55 ; elapsed = 00:02:27 . Memory (MB): peak = 1753.254 ; gain = 847.520
+Finished Technology Mapping : Time (s): cpu = 00:00:28 ; elapsed = 00:00:29 . Memory (MB): peak = 1716.395 ; gain = 844.574
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -402,37 +403,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:11 ; elapsed = 00:03:05 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:11 ; elapsed = 00:03:05 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:11 ; elapsed = 00:03:05 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:11 ; elapsed = 00:03:05 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:11 ; elapsed = 00:03:05 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:11 ; elapsed = 00:03:05 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -448,40 +449,40 @@ Report Cell Usage:
 +------+--------+------+
 |      |Cell    |Count |
 +------+--------+------+
-|1     |LUT1    |     7|
-|2     |LUT2    |   140|
-|3     |LUT3    |    71|
-|4     |LUT4    |    30|
-|5     |LUT5    |    47|
-|6     |LUT6    |    54|
+|1     |LUT1    |     8|
+|2     |LUT2    |   142|
+|3     |LUT3    |    72|
+|4     |LUT4    |    34|
+|5     |LUT5    |    53|
+|6     |LUT6    |    59|
 |7     |SRLC32E |     3|
-|8     |FDRE    |   273|
+|8     |FDRE    |   277|
 |9     |FDSE    |    16|
 +------+--------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:11 ; elapsed = 00:03:05 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 171 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:02:59 . Memory (MB): peak = 1942.562 ; gain = 942.801
-Synthesis Optimization Complete : Time (s): cpu = 00:01:11 ; elapsed = 00:03:07 . Memory (MB): peak = 1942.562 ; gain = 1036.828
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:30 . Memory (MB): peak = 1904.133 ; gain = 948.785
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1904.133 ; gain = 1032.312
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.029 . Memory (MB): peak = 1942.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.011 . Memory (MB): peak = 1904.133 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1942.562 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1916.867 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete | Checksum: a20a8fef
+Synth Design complete | Checksum: 1be593b5
 INFO: [Common 17-83] Releasing license: Synthesis
-108 Infos, 122 Warnings, 0 Critical Warnings and 0 Errors encountered.
+110 Infos, 122 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:19 ; elapsed = 00:03:30 . Memory (MB): peak = 1942.562 ; gain = 1266.855
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1942.562 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/hardware_axi_interconnect_0_imp_xbar_0.dcp' has been generated.
-INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hardware_axi_interconnect_0_imp_xbar_0, cache-ID = 123412bb420b7214
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:36 . Memory (MB): peak = 1916.867 ; gain = 1276.863
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1916.867 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Kevin/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/hardware_axi_interconnect_0_imp_xbar_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP hardware_axi_interconnect_0_imp_xbar_0, cache-ID = dc04ea9d8fac05d0
 INFO: [Coretcl 2-1174] Renamed 24 cell refs.
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1942.562 ; gain = 0.000
-INFO: [Common 17-1381] The checkpoint 'C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/hardware_axi_interconnect_0_imp_xbar_0.dcp' has been generated.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1916.867 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/Kevin/lab_fsm/lab_fsm.runs/hardware_axi_interconnect_0_imp_xbar_0_synth_1/hardware_axi_interconnect_0_imp_xbar_0.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file hardware_axi_interconnect_0_imp_xbar_0_utilization_synth.rpt -pb hardware_axi_interconnect_0_imp_xbar_0_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:57:09 2026...
+INFO: [Common 17-206] Exiting Vivado at Thu Nov  5 13:44:50 2026...

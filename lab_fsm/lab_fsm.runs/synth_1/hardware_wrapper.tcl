@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/synth_1/hardware_wrapper.tcl"
+  variable script "C:/Kevin/lab_fsm/lab_fsm.runs/synth_1/hardware_wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -57,7 +57,6 @@ if {$::dispatch::connected} {
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7z020clg400-1
 
@@ -65,39 +64,43 @@ set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
 set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
-set_property webtalk.parent_dir {C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.cache/wt} [current_project]
-set_property parent.project_path {C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.xpr} [current_project]
+set_property webtalk.parent_dir C:/Kevin/lab_fsm/lab_fsm.cache/wt [current_project]
+set_property parent.project_path C:/Kevin/lab_fsm/lab_fsm.xpr [current_project]
 set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
-set_property ip_repo_paths {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/ip_repo/RegisterControl_leds_1_0}} [current_project]
+set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
+set_property ip_repo_paths {
+  c:/Kevin/ip_repo1/RegisterControl_leds_1_0
+  c:/Kevin/ip_repo1
+} [current_project]
 update_ip_catalog
-set_property ip_output_repo {c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.cache/ip} [current_project]
+set_property ip_output_repo c:/Kevin/lab_fsm/lab_fsm.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_vhdl -library xil_defaultlib {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/hdl/hardware_wrapper.vhd}}
-add_files {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.srcs/sources_1/bd/hardware/hardware.bd}}
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_0_1/hardware_axi_dma_0_1.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_0_1/hardware_axi_dma_0_1_clocks.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_0_1/hardware_axi_dma_0_1_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_1_0/hardware_axi_dma_1_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_1_0/hardware_axi_dma_1_0_clocks.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_1_0/hardware_axi_dma_1_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_0_0/hardware_fifo_generator_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_0_0/hardware_fifo_generator_0_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_1_0/hardware_fifo_generator_1_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_1_0/hardware_fifo_generator_1_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axis_broadcaster_0_0/hardware_axis_broadcaster_0_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_1_imp_xbar_0/hardware_axi_interconnect_1_imp_xbar_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_proc_sys_reset_0_0/hardware_proc_sys_reset_0_0_board.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_proc_sys_reset_0_0/hardware_proc_sys_reset_0_0.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_proc_sys_reset_0_0/hardware_proc_sys_reset_0_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_auto_pc_0/hardware_axi_interconnect_0_imp_auto_pc_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_1_imp_auto_pc_0/hardware_axi_interconnect_1_imp_auto_pc_0_ooc.xdc}}]
-set_property used_in_implementation false [get_files -all {{c:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/hardware_ooc.xdc}}]
+read_vhdl -library xil_defaultlib c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/hdl/hardware_wrapper.vhd
+add_files C:/Kevin/lab_fsm/lab_fsm.srcs/sources_1/bd/hardware/hardware.bd
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_processing_system7_0_0/hardware_processing_system7_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_0_0/hardware_axi_dma_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_0_0/hardware_axi_dma_0_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_0_0/hardware_axi_dma_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_reception_0/hardware_axi_dma_reception_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_reception_0/hardware_axi_dma_reception_0_clocks.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_dma_reception_0/hardware_axi_dma_reception_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_0_0/hardware_fifo_generator_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_0_0/hardware_fifo_generator_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_0_2/hardware_fifo_generator_0_2.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_fifo_generator_0_2/hardware_fifo_generator_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axis_broadcaster_0_0/hardware_axis_broadcaster_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_0/hardware_axi_interconnect_0_imp_xbar_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_interconnect_0_imp_xbar_1/hardware_axi_interconnect_0_imp_xbar_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_proc_sys_reset_0_1/hardware_proc_sys_reset_0_1_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_proc_sys_reset_0_1/hardware_proc_sys_reset_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_proc_sys_reset_0_1/hardware_proc_sys_reset_0_1_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_axi_mem_intercon_imp_auto_pc_0/hardware_axi_mem_intercon_imp_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_ps7_0_axi_periph_imp_auto_pc_0/hardware_ps7_0_axi_periph_imp_auto_pc_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/hardware_ooc.xdc]
 
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -108,14 +111,14 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/PracticaInstrumentacion/VivadoFiles/pynq_c.xdc}}
-set_property used_in_implementation false [get_files {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/PracticaInstrumentacion/VivadoFiles/pynq_c.xdc}}]
+read_xdc C:/Kevin/lab_fsm/lab_fsm.srcs/constrs_1/imports/VivadoFiles/pynq_c.xdc
+set_property used_in_implementation false [get_files C:/Kevin/lab_fsm/lab_fsm.srcs/constrs_1/imports/VivadoFiles/pynq_c.xdc]
 
 read_xdc dont_touch.xdc
 set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
-read_checkpoint -auto_incremental -incremental {C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.srcs/utils_1/imports/synth_1/top_leds.dcp}
+read_checkpoint -auto_incremental -incremental C:/Kevin/lab_fsm/lab_fsm.srcs/utils_1/imports/synth_1/top_leds.dcp
 close [open __synthesis_is_running__ w]
 
 OPTRACE "synth_design" START { }

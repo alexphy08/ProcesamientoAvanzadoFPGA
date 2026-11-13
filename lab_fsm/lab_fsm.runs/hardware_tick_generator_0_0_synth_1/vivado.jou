@@ -3,13 +3,13 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Thu Nov  5 13:53:04 2026
-# Process ID         : 31200
-# Current directory  : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_tick_generator_0_0_synth_1
+# Start of session at: Thu Nov  5 13:24:18 2026
+# Process ID         : 6836
+# Current directory  : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_tick_generator_0_0_synth_1
 # Command line       : vivado.exe -log hardware_tick_generator_0_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hardware_tick_generator_0_0.tcl
-# Log file           : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_tick_generator_0_0_synth_1/hardware_tick_generator_0_0.vds
-# Journal file       : C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/hardware_tick_generator_0_0_synth_1\vivado.jou
-# Running On         : DESKTOP-F0DLAU4
+# Log file           : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_tick_generator_0_0_synth_1/hardware_tick_generator_0_0.vds
+# Journal file       : C:/Kevin/lab_fsm/lab_fsm.runs/hardware_tick_generator_0_0_synth_1\vivado.jou
+# Running On         : DESKTOP-N301Q0S
 # Platform           : Windows Server 2016 or Windows 10
 # Operating System   : 26200
 # Processor Detail   : AMD Ryzen 7 PRO 5750G with Radeon Graphics     
@@ -17,8 +17,8 @@
 # CPU Physical cores : 8
 # CPU Logical cores  : 16
 # Host memory        : 16486 MB
-# Swap memory        : 22500 MB
-# Total Virtual      : 38987 MB
-# Available Virtual  : 1813 MB
+# Swap memory        : 12884 MB
+# Total Virtual      : 29371 MB
+# Available Virtual  : 17749 MB
 #-----------------------------------------------------------
 source hardware_tick_generator_0_0.tcl -notrace

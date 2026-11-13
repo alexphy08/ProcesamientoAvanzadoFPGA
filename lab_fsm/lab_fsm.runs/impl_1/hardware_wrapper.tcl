@@ -1,5 +1,5 @@
 namespace eval ::optrace {
-  variable script "C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/impl_1/hardware_wrapper.tcl"
+  variable script "C:/Kevin/lab_fsm/lab_fsm.runs/impl_1/hardware_wrapper.tcl"
   variable category "vivado_impl"
 }
 
@@ -105,30 +105,33 @@ set ACTIVE_STEP init_design
 set rc [catch {
   create_msg_db init_design.pb
   set_param chipscope.maxJobs 4
-  set_param xicom.use_bs_reader 1
   set_param runs.launchOptions { -jobs 16  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7z020clg400-1
+  set_property board_part www.digilentinc.com:pynq-z1:part0:1.0 [current_project]
   set_property design_mode GateLvl [current_fileset]
   set_param project.singleFileAddWarning.threshold 0
 OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
-  set_property webtalk.parent_dir {C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.cache/wt} [current_project]
-  set_property parent.project_path {C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.xpr} [current_project]
-  set_property ip_repo_paths {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/ip_repo/RegisterControl_leds_1_0}} [current_project]
+  set_property webtalk.parent_dir C:/Kevin/lab_fsm/lab_fsm.cache/wt [current_project]
+  set_property parent.project_path C:/Kevin/lab_fsm/lab_fsm.xpr [current_project]
+  set_property ip_repo_paths {
+  C:/Kevin/ip_repo1/RegisterControl_leds_1_0
+  C:/Kevin/ip_repo1
+} [current_project]
   update_ip_catalog
-  set_property ip_output_repo {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.cache/ip}} [current_project]
+  set_property ip_output_repo C:/Kevin/lab_fsm/lab_fsm.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
   set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
-  add_files -quiet {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.runs/synth_1/hardware_wrapper.dcp}}
+  add_files -quiet C:/Kevin/lab_fsm/lab_fsm.runs/synth_1/hardware_wrapper.dcp
   set_msg_config -source 4 -id {BD 41-1661} -limit 0
   set_param project.isImplRun true
-  add_files {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.srcs/sources_1/bd/hardware/hardware.bd}}
+  add_files C:/Kevin/lab_fsm/lab_fsm.srcs/sources_1/bd/hardware/hardware.bd
   set_param project.isImplRun false
 OPTRACE "read constraints: implementation" START { }
-  read_xdc {{C:/Users/Laboratorio PC 3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/PracticaInstrumentacion/VivadoFiles/pynq_c.xdc}}
+  read_xdc C:/Kevin/lab_fsm/lab_fsm.srcs/constrs_1/imports/VivadoFiles/pynq_c.xdc
 OPTRACE "read constraints: implementation" END { }
 OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }

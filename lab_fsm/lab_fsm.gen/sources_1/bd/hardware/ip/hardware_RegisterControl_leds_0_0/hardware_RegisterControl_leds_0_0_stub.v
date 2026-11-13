@@ -2,10 +2,10 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-// Date        : Thu Nov  5 13:56:20 2026
-// Host        : DESKTOP-F0DLAU4 running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub {c:/Users/Laboratorio PC
-//               3/Documents/crisFPGA/ProcesamientoAvanzadoFPGA/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_RegisterControl_leds_0_0/hardware_RegisterControl_leds_0_0_stub.v}
+// Date        : Thu Nov  5 13:25:58 2026
+// Host        : DESKTOP-N301Q0S running 64-bit major release  (build 9200)
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Kevin/lab_fsm/lab_fsm.gen/sources_1/bd/hardware/ip/hardware_RegisterControl_leds_0_0/hardware_RegisterControl_leds_0_0_stub.v
 // Design      : hardware_RegisterControl_leds_0_0
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7z020clg400-1
@@ -14,7 +14,7 @@
 // This empty module with port declaration file causes synthesis tools to infer a black box for IP.
 // The synthesis directives are for Synopsys Synplify support to prevent IO buffer insertion.
 // Please paste the declaration into a Verilog source file or add the file as an additional source.
-(* CHECK_LICENSE_TYPE = "hardware_RegisterControl_leds_0_0,RegisterControl_leds,{}" *) (* core_generation_info = "hardware_RegisterControl_leds_0_0,RegisterControl_leds,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=RegisterControl_leds,x_ipVersion=1.0,x_ipCoreRevision=4,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *) (* downgradeipidentifiedwarnings = "yes" *) 
+(* CHECK_LICENSE_TYPE = "hardware_RegisterControl_leds_0_0,RegisterControl_leds,{}" *) (* core_generation_info = "hardware_RegisterControl_leds_0_0,RegisterControl_leds,{x_ipProduct=Vivado 2024.2,x_ipVendor=xilinx.com,x_ipLibrary=user,x_ipName=RegisterControl_leds,x_ipVersion=1.0,x_ipCoreRevision=3,x_ipLanguage=VHDL,x_ipSimLanguage=VHDL,C_S00_AXI_DATA_WIDTH=32,C_S00_AXI_ADDR_WIDTH=4}" *) (* downgradeipidentifiedwarnings = "yes" *) 
 (* x_core_info = "RegisterControl_leds,Vivado 2024.2" *) 
 module hardware_RegisterControl_leds_0_0(mode, val, s00_axi_aclk, s00_axi_aresetn, 
   s00_axi_awaddr, s00_axi_awprot, s00_axi_awvalid, s00_axi_awready, s00_axi_wdata, 

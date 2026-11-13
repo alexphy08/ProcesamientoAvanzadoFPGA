@@ -12,7 +12,7 @@ entity fsm_controller is
         clk  : in  std_logic;
         rst  : in  std_logic;
         
-        mode : in  std_logic_vector(2 downto 0);
+        mode : in  <???>(2 downto 0);
         tick : in  std_logic;
         val  : in  std_logic_vector(3 downto 0);
         
@@ -29,7 +29,7 @@ end fsm_controller;
 
 architecture Behavioral of fsm_controller is
 
-    type state_type is (IDLE, RIGHT, LEFT, VALUE, DMA);
+    type state_type is (IDLE, RIGHT, <???>, VALUE, DMA);
 
     signal state    : state_type := IDLE;
     signal tick_prev : std_logic := '0';
@@ -39,11 +39,11 @@ architecture Behavioral of fsm_controller is
 begin
 
     s_axis_tready <= '1' when mode = "100" and tick = '1' and tick_prev = '0' else '0';
-    leds <= led_reg;
+    <???> <= led_reg;
 
     process(clk)
     begin
-        if rising_edge (clk) then
+        if <???>(clk) then
 
             if rst = '0' then
                 state     <= IDLE;
@@ -54,7 +54,7 @@ begin
                 -- Default: update the selected operating mode
                 case mode is
                     when "000"   => state <= IDLE;
-                    when "001"   => state <= RIGHT; 
+                    when "001"   => state <= <???>; 
                     when "010"   => state <= LEFT;
                     when "011"   => state <= VALUE;
                     when "100"   => state <= DMA;
@@ -75,7 +75,7 @@ begin
                             if led_reg = "1000" then
                                 led_reg <= "0001";
                             else
-                                led_reg <= led_reg(2 downto 0) & '0';
+                                led_reg <= <???>(2 downto 0) & '0';
                             end if;
 
                         when LEFT =>
@@ -85,12 +85,12 @@ begin
                                 led_reg <= '0' & led_reg(3 downto 1);
                             end if;
                             
-                        when VALUE =>
+                        when <???> =>
                             led_reg <= val;
                         
                         when DMA =>
                             if s_axis_tvalid = '1' and tick = '1' and tick_prev = '0' then
-                                led_reg <= s_axis_tdata(3 downto 0);
+                                <???> <= s_axis_tdata(3 downto 0);
                             end if;
                     end case;
 

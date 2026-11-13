@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1793904776" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_leds.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7z020clg400-1" LaunchTime="1793904485" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/top_leds.dcp">
   <File Type="PA-TCL" Name="hardware_wrapper.tcl"/>
   <File Type="REPORTS-TCL" Name="hardware_wrapper_reports.tcl"/>
   <File Type="RDS-RDS" Name="hardware_wrapper.vds"/>
@@ -11,20 +11,26 @@
   <File Type="VDS-TIMING-PB" Name="hardware_wrapper_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/stream_transform.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/VivadoFiles/tick_generator.vhd">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/tick_generator.vhd"/>
+        <Attr Name="ImportTime" Val="1793246110"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/tick_generator.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/VivadoFiles/fsm_controller.vhd">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/fsm_controller.vhd"/>
+        <Attr Name="ImportTime" Val="1793245819"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/fsm_controller.vhd">
+    <File Path="$PSRCDIR/sources_1/imports/VivadoFiles/stream_transform.vhd">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/stream_transform.vhd"/>
+        <Attr Name="ImportTime" Val="1793246041"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
@@ -56,8 +62,10 @@
   </FileSet>
   <FileSet Name="constrs_in" Type="Constrs" RelSrcDir="$PSRCDIR/constrs_1" RelGenDir="$PGENDIR/constrs_1">
     <Filter Type="Constrs"/>
-    <File Path="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/pynq_c.xdc">
+    <File Path="$PSRCDIR/constrs_1/imports/VivadoFiles/pynq_c.xdc">
       <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../PracticaInstrumentacion/VivadoFiles/pynq_c.xdc"/>
+        <Attr Name="ImportTime" Val="1793245951"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
@@ -81,24 +89,20 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2024"/>
     <Step Id="synth_design"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_fifo_generator_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_interconnect_1_imp_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_dma_1_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_dma_0_1"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_interconnect_0_imp_auto_pc_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_proc_sys_reset_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_stream_transform_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_RegisterControl_leds_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_axis_broadcaster_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_interconnect_0_imp_xbar_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_fifo_generator_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_fsm_controller_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_tick_generator_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="hardware_processing_system7_0_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_interconnect_1_imp_auto_pc_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_fsm_controller_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_dma_reception_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_RegisterControl_leds_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_stream_transform_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_tick_generator_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_dma_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_fifo_generator_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_interconnect_0_imp_xbar_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_fifo_generator_0_2"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_axis_broadcaster_0_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_axi_interconnect_0_imp_xbar_1"/>
+  <BlockFileSet Type="BlockSrcs" Name="hardware_proc_sys_reset_0_1"/>
 </GenRun>
